@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   height: 50px;
-  background: #c2eeff;
+  background-color: #5182bd;
   padding: 15px;
   align-items: center;
   font-family: "Roboto", sans-serif;
@@ -12,13 +12,16 @@
   align-items: center;
   justify-content: flex-start;
 }
+.header__logo-wrapper svg {
+  height: 75px;
+}
 .header__logo-text {
-  color: #f15b2a;
+  color: #fff;
   font-size: calc(10px + 3vmin);
-  margin-left: 15px;
+  white-space: nowrap;
 }
 .header__link {
-  color: #f15b2a;
+  color: #fff;
   text-decoration: none;
   font-size: calc(10px + 2vmin);
 }
@@ -31,10 +34,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .about__container {
-  width: 50%;
   padding-right: 15px;
+  width: calc(50% - 15px);
 }
 .about__image {
   width: 100%;  
@@ -55,21 +59,78 @@
   padding: 15px;
   text-align: center;
   margin: 1em 0;
-  background: #f15b2a;
+  background: #6d1f15;
 }
 .about__list-icons {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
-  margin: 1em 0;
+  margin: 1em 0 6em;
   padding: 0;
 }
 .about__item-icon {
   margin-right: 1em;
 }
+h2 {
+  padding: 2em 0 1em;
+  text-align: center;
+  color: #fff;
+  font-size: calc(10px + 3vmin);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.skills {
+  background-color: #5b885d;
+  overflow: hidden;
+}
+.skills__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  flex-wrap: wrap;
+  text-align: center; 
+}
+.skills__item {
+  display: block;
+  margin: 15px;
+  padding: 15px;
+  height: 300px;
+  background: #fff;
+  width: 500px;
+  border-radius: 15px;
+}
+
+@media (max-width: 800px) {
+  .about__container {
+    width: 100%;
+    
+  }
+  .about__container.about__left {
+  padding: 0;
+  }
+  .about__container.about__right {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header__logo-text {
+    display: none;
+  }
+  .header__link {
+    font-size: calc(10px + 3vmin);
+}
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+@keyframes animate-background {
+	from { background-position:  0 0;  }
+	to { background-position: 2000px 0; }
 }
 
 @keyframes App-logo-spin {
